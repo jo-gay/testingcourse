@@ -12,7 +12,7 @@
 \maketitle
 \section*{Instructions}
 These are self evaluation exercises. If you know no python then work through
-these exercises and it will prepare yourself for the lab.
+these exercises and it will prepare you for the lab.
 %There is nothing to hand in with this lab. You will be orally marked
 %by the lab assistant. You will show code that have produced,
 %and the lab assistants will ask you questions about the code. The lab
@@ -36,12 +36,13 @@ the next lab. If you get stuck you should look at the Python tutorial at
 then this lab should be very easy. Hopefully if you have had no experience
 with Python, then this lab will help to get you started for the next lab.
 \section*{Note on Python versions}
-Python is a changing language. Python 3.0 is in places very different
+Python is a changing language. Python 3 is in places very different
 from early versions of Python. For various reasons, older versions of
 Python are in use on the Unix terminals. But all of the code presented in
 this lab should work for any version of Python later than 2.4.
-Note therefore that on the terminal servers, writing just 'python' will invoke Python 2.3,
-while 'python2' will invoke the latest version, Python 2.7.
+Note therefore that on the terminal servers, writing just 'python' will invoke Python 2.7,
+while 'python3' will invoke a more recent version, Python 3.6. Using
+python3 is recommended.
 
 \section*{Python Unit Testing Mechanics}
 We will split our code up into two files {\tt code.py} and {\tt
@@ -69,7 +70,7 @@ Note that in Python, \emph{indentations matter}. So for example the {\tt def tes
 
 Now at the command line, or using your favourite IDE, do
 \begin{verbatim}
-hamberg> python2 testcode.py
+hamberg> python3 testcode.py
 .
 ----------------------------------------------------------------------
 Ran 1 test in 0.000s
@@ -81,15 +82,15 @@ What happened here? We have defined a rather silly function that
 returns 0. We assert that the code also returns 0 using the {\tt
   self.assertEqual} function in {\tt testcode.py} 
 \section{Task}
-Python like C++ and Java uses {\tt ==} for comparison. So for example {1 == 2}
+Python, like C++ and Java, uses {\tt ==} for comparison. So for example {1 == 2}
 is {\tt False} while {1 == 1} is {\tt True}. Rewrite the above test to use
 {\tt self.assertTrue}. Note that you need a version of Python greater than or
 equal to 2.4 to use {\tt assertTrue}. As mentioned, on the department Unix
 terminals you can use the command line:
 \begin{verbatim}
-hamberg> python2 testcode.py
+hamberg> python3 testcode.py
 \end{verbatim}
-to invoke the latest installed version of Python 2.
+to invoke the latest installed version of Python 3.
 
 \section*{Functions and arguments}
 Python functions can take arguments. For example we can write the
@@ -115,7 +116,7 @@ class TestCode(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-\end{lstlisting} and run them as usual with {\tt python2 testcode.py}. Note that each test function starts
+\end{lstlisting} and run them as usual with {\tt python3 testcode.py}. Note that each test function starts
 with {\tt test}. Note again that indentation is important. From now on only
 the new test functions will be given. It is up to you to add them to
 {\tt testcode.py} and make sure that you have the correct indentation.
@@ -202,8 +203,8 @@ To concatenate strings you can use {\tt +}
 'hello  goodbye'
 \end{verbatim}
 \section{Task}
-As you can see {\tt split} returns a list strings. Python has a built
-in {\tt join} method. You job is to write your own. It should pass the
+As you can see {\tt split} returns a list of strings. Python has a built
+in {\tt join} method. Your job is to write your own. It should pass the
 tests:
 \begin{lstlisting}
    def test_myjoin(self):
@@ -224,7 +225,7 @@ The following code will not work:
     return rstring
 \end{lstlisting}
 Run the test and find out. The code nearly works. The loop {\tt for i
-  in l} iterates over every item in the list. The following hints might help:
+  in lst} iterates over every item in the list. The following hints might help:
 \begin{itemize}
 \item Given a list {\tt lst} to get the list minus the last item use:
   \begin{lstlisting}
